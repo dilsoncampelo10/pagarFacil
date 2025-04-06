@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('status', array_column(UserType::cases(), 'name'));
+            $table->enum('type', array_column(UserType::cases(), 'name'));
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();

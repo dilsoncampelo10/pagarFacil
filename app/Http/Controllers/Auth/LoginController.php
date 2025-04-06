@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Http\Controllers\Auth;
+
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
+class LoginController extends Controller
+{
+    public function create(){
+        return response()->json('necessario login');
+    }
+    public function store(Request $request)
+    {
+        $user = User::where('email', $request->email)->first();
+
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            return response()->json(['message' => 'The provided credentials are incorrect.'], 403);
+        }
+        $token = $user->createToken('tokenUser - ' . $user->id)->plainTextToken;
+
+        return response()->json([
+            'user' => $user,
+            'token' => $token
+        ], 201);
+    }
+
+    public function destroy(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+
+        return response()->json(['message' => 'Logout successful.']);
+    }
+}
