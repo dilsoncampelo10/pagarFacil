@@ -2,14 +2,16 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\TransferController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/hello', function () {
-        return response()->json('hello');
-    });
+    Route::post('/transfer', [TransferController::class, 'store'])->name('transfer.store');
+
+    Route::get('/logout', [LoginController::class, 'destroy']);
 });
 
 Route::get('/login', [LoginController::class, 'create'])->name('login');

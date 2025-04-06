@@ -24,6 +24,7 @@ class User extends Authenticatable
         'cpf/cnpj',
         'email',
         'type',
+        'balance',
         'password',
     ];
 

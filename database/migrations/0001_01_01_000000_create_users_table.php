@@ -20,6 +20,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('type', array_column(UserType::cases(), 'name'));
+            $table->double('balance')->default(10);
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
