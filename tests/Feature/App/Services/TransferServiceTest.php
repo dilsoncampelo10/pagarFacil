@@ -6,7 +6,6 @@ use App\Models\Transfer;
 use App\Models\User;
 use App\Services\TransferService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 

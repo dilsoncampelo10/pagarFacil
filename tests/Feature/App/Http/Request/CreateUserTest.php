@@ -4,7 +4,6 @@ namespace Tests\Feature\App\Http\Request;
 
 use App\Http\Requests\User\CreateUser;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Validator;
 use Tests\TestCase;
 
