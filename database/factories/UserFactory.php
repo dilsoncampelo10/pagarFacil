@@ -23,8 +23,15 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $cpfOrCnpj = $this->faker->randomElement(['cpf', 'cnpj']);
+
+        $document = $cpfOrCnpj === 'cpf'
+            ? $this->generateFormattedCPF()
+            : $this->generateFormattedCNPJ();
+
         return [
-            'name' => fake()->name(),
+            'full_name' => fake()->name(),
+            'cpf/cnpj' => $document,
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
@@ -37,8 +44,18 @@ class UserFactory extends Factory
      */
     public function unverified(): static
     {
-        return $this->state(fn (array $attributes) => [
+        return $this->state(fn(array $attributes) => [
             'email_verified_at' => null,
         ]);
+    }
+
+    private function generateFormattedCPF(): string
+    {
+        return $this->faker->numerify('###.###.###-##');
+    }
+
+    private function generateFormattedCNPJ(): string
+    {
+        return $this->faker->numerify('##.###.###/####-##');
     }
 }
