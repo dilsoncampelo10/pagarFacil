@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/transfer', [TransferController::class, 'store'])->name('transfer.store');
 
-    Route::get('/logout', [LoginController::class, 'destroy']);
+    Route::delete('/logout', [LoginController::class, 'destroy']);
 });
 
 Route::get('/login', [LoginController::class, 'create'])->name('login');

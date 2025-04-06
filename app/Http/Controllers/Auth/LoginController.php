@@ -9,8 +9,9 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-    public function create(){
-        return response()->json('necessario login');
+    public function create()
+    {
+        return response()->json(['msg' => 'login required']);
     }
     public function store(Request $request)
     {
@@ -31,6 +32,6 @@ class LoginController extends Controller
     {
         $request->user()->currentAccessToken()->delete();
 
-        return response()->json(['message' => 'Logout successful.']);
+        return response()->json(['message' => 'Logout successful.'], 200);
     }
 }
