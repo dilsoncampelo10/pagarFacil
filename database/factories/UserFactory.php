@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\UserType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -34,6 +35,7 @@ class UserFactory extends Factory
             'cpf/cnpj' => $document,
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
+            'type' => $cpfOrCnpj === 'cpf' ? UserType::COMMON : UserType::SHOPKEEPER,
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
         ];
