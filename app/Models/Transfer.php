@@ -12,7 +12,7 @@ class Transfer extends Model
     /** @use HasFactory<\Database\Factories\TransferFactory> */
     use HasFactory, SoftDeletes;
 
-    protected $visible = ['value', 'user_payer_id', 'user_payee_id'];
+    protected $visible = ['value', 'user_payer_id', 'user_payee_id', 'created_at'];
 
     protected $fillable = [
         'value',
