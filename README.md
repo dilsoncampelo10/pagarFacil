@@ -69,8 +69,9 @@ alias = "./vendor/bin/sail"
 
 # Rode o container
 sail up
-# Rode o sail
+# Rode o servidor
 sail artisan serve
-
+#Realize os testes
+sail artisan test
 
 ```
