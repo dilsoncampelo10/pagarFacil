@@ -20,8 +20,4 @@ class Transfer extends Model
         'user_payee_id',
         'token',
     ];
-
-    protected $casts = [
-        'type' => UserType::class,
-    ];
 }

@@ -27,7 +27,7 @@ Este projeto é um sistema de transferências financeiras entre usuários, com a
 
 OU ENTÂO UTILIZE O
 
-- DOCKER COM SAIL
+- 🐋 DOCKER COM SAIL
 
 ---
 
@@ -36,7 +36,7 @@ OU ENTÂO UTILIZE O
 ```bash
 # Clone o repositório
 git clone https://github.com/dilsoncampelo10/pagarFacil
-cd https://github.com/dilsoncampelo10/pagarFacil
+cd pagarFacil
 
 # Instale as dependências
 composer install
@@ -51,7 +51,8 @@ php artisan migrate
 # Rode o servidor local
 php artisan serve
 
-##  Utilizando SAIL
+```
+## 🐋 Utilizando SAIL
 
 ```bash
 # Crie um ALIAS (OPCIONAL)
