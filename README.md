@@ -4,6 +4,15 @@ Este projeto é um sistema de transferências financeiras entre usuários, com a
 
 ---
 
+## 📄 Documentação
+
+Dentro da pasta docs do projeto, pode-se encontrar imagens com o modelo conceitual do banco de dados, requisitos, regras de negócio e diagrama de caso de uso, bem como, acessando:
+
+http://127.0.0.1/api/documentation
+
+
+Está presente a documentação dos endpoints, gerado pelo Swagger
+
 ## 🚀 Funcionalidades
 
 - Cadastro de usuários (`COMMON` e `SHOPKEEPER`)
@@ -62,3 +71,4 @@ alias = "./vendor/bin/sail"
 sail artisan up
 
 
+```
