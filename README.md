@@ -67,8 +67,10 @@ php artisan serve
 # Crie um ALIAS (OPCIONAL)
 alias = "./vendor/bin/sail"
 
+# Rode o container
+sail up
 # Rode o sail
-sail artisan up
+sail artisan serve
 
 
 ```
